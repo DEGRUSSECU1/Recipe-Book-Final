@@ -3,11 +3,10 @@ const mealList = document.querySelector("#meal");
 const mealDetailContent = document.querySelector(".meal-details-content");
 const recipeCloseBtn = document.querySelector("#recipe-close-btn")
 const gifIndex = document.querySelector("#gifOne");
- 
+const tellTimeBtn = document.querySelector('#tell-time');
 //add eventListeners
 searchBtn.addEventListener('click', getMealList);
-gifIndex.addEventListener('click', )
-
+tellTimeBtn.addEventListener('click', tellTime);
 
 //get meal list that matches with the ingredients
 
@@ -42,12 +41,40 @@ async function getMealList () {
              
               mealList.innerHTML = html;
           };
+  getMealList();
 
- 
- 
+function tellTime() {
+  const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+  const weeks = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  let now = new Date();
+  let month = months[now.getMonth()];
+  let day = weeks[now.getDate()];
+  let year = now.getFullYear();
+  let dayNum = now.getUTCDay();
+  let theHr = now.getHours();
+  let theMin = now.getMinutes();
+  let theSec = now.getSeconds();
+  let period = "AM";
+  if(theHr >= 12){
+    period = "PM";
+  }
+  if(theHr == 0){
+    theHr = 12;
+  }
+  if(theHr > 12){
+    theHr = theHr - 12;
+  }
+document.getElementById("month").innerHTML = month;
+document.getElementById("dayname").innerHTML = day;
+document.getElementById("year").innerHTML = year;
+document.getElementById("daynum").innerHTML = dayNum;
+document.getElementById("hour").innerHTML = theHr;
+document.getElementById("minutes").innerHTML = theMin;
+document.getElementById("seconds").innerHTML = theSec;
+document.getElementById("period").innerHTML = period;
 
-
-
+}
+tellTime();
 
 
 
