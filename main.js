@@ -72,7 +72,6 @@ document.getElementById("hour").innerHTML = theHr;
 document.getElementById("minutes").innerHTML = theMin;
 document.getElementById("seconds").innerHTML = theSec;
 document.getElementById("period").innerHTML = period;
-
 }
 tellTime();
 
