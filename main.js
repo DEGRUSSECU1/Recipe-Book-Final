@@ -50,7 +50,7 @@ function tellTime() {
   let month = months[now.getMonth()];
   let day = weeks[now.getDate()];
   let year = now.getFullYear();
-  let dayNum = now.getUTCDay();
+  let dayNum = now.getDay();
   let theHr = now.getHours();
   let theMin = now.getMinutes();
   let theSec = now.getSeconds();
@@ -69,7 +69,7 @@ document.getElementById("dayname").innerHTML = day;
 document.getElementById("year").innerHTML = year;
 document.getElementById("daynum").innerHTML = dayNum;
 document.getElementById("hour").innerHTML = theHr;
-document.getElementById("minutes").innerHTML = theMin;
+document.getElementById("minutes").innerHTML =theMin;
 document.getElementById("seconds").innerHTML = theSec;
 document.getElementById("period").innerHTML = period;
 }
